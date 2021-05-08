@@ -1,0 +1,343 @@
+<!-- 
+    SNEAKER STORE PROJECT
+
+    You are tasked to replicate the following site: https://megaone.acrothemes.com/index-product-hotspot.html
+
+    Most of the HTML structure has been set up for you, however you will have to go through the document to
+    fill in the missing HTML elements and classes. I have also included the background, and 2 images for you.
+
+    If you would like to edit settings of either Owl Carousel or FullPage.js, you will need to edit the settings
+    in the scripts.js file.
+
+    Owl Carousel Options:
+    https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
+
+    FullPage.js Options:
+    https://github.com/alvarotrigo/fullPage.js#options
+
+    I have also linked and initialized Animate On Scroll (AOS). You will need to go through the documentation
+    to apply the correct attributes to get the desired outcome.
+
+    AOS Documentation:
+    https://michalsnik.github.io/aos/
+
+    You will also have to link in your own FontAwesome kits. I have marked the area for this script with a comment
+
+    FontAwesome Icons:
+    https://fontawesome.com/icons?d=gallery&p=2&m=free
+
+    THE DEADLINE FOR THE PROJECT IS FRIDAY 7 MAY
+
+    Goodluck and have fun!
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneaker Store</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- 3rd Party CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.css"
+      integrity="sha512-RVmrWua3k1yTDEOg4Yzs2bK5+Thh7nM6jrhDq/6/5/Mwa0JbYe4pP4YMK5sqghKz01T3DgrwYc57Jaf1PSurCg=="
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+    />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="icons">
+      <div class="icon-group">
+        <a href="#fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="#twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#ig"><i class="fab fa-instagram"></i></a>
+      </div>
+    </nav>
+    <div id="fullpage">
+      <div class="section" data-aos="fade-down">
+        <!-- Home Page-->
+        <div id="homePage" class="content">
+          <div class="home-details">
+            <h1 class="home-heading">
+              <span class="premium">Premium</span
+              ><span class="airmax">Air Max Sneakers</span>
+            </h1>
+            <p>
+              Lorem ipsum is simply dummy text of the printing typesetting.
+              Lorem Ipsum has been the industry’s standard dummy.
+            </p>
+            <a href="#products" class="btn-1">View More</a>
+          </div>
+          <img
+            class="sneaker-1"
+            src="./images/pngegg-main.png"
+            alt="Sneaker"
+            data-tilt
+          />
+        </div>
+      </div>
+      <!-- Premium Shoe Slider -->
+      <div class="section">
+        <div id="productPage" class="content">
+          <header class="page-header-container">
+            <div class="title-font">
+              <h2 class="page-heading">Premium</h2>
+              <h3 class="page-subtitle">Shoe Collection</h3>
+            </div>
+            <div class="number-stats">
+              <div class="individual-stats">
+                <span>101</span>Shoes Delivered
+              </div>
+              <div class="individual-stats"><span>43</span>New Articles</div>
+              <div class="individual-stats"><span>82</span>Happy Customers</div>
+            </div>
+          </header>
+
+          <!-- Product slider, please add your own classes as well to the HTML -->
+          <div id="product-slider" class="owl-carousel" data-aos="zoom-in-up">
+            <!-- Product Item -->
+            <div class="product">
+              <img src="./images/pngegg-10.png" alt="Sneaker" />
+              <h3>Airmax '97</h3>
+              <button class="btn-2" onclick="openModal()">View Detail</button>
+            </div>
+            <!-- Product Item -->
+
+            <div class="product">
+              <img src="./images/pngegg-2.png" alt="Sneaker" />
+              <h3>Airmax 2016</h3>
+              <button class="btn-2" onclick="openModal()">View Detail</button>
+            </div>
+            <!-- Product Item -->
+            <div class="product">
+              <img src="./images/pngegg-7.png" alt="Sneaker" />
+              <h3>Nike Air Trainers</h3>
+              <button class="btn-2" onclick="openModal()">View Detail</button>
+            </div>
+            <!-- Product Item -->
+            <div class="product">
+              <img src="./images/pngegg-girl.png" alt="Sneaker" />
+              <h3>Nike Jordan Air 1</h3>
+              <button class="btn-2" onclick="openModal()">View Detail</button>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div id="modal">
+            <!-- Add modal content here. Please pay careful 
+                attention to layout and styling, and please ignore any functionality 
+                eg: switching images on click.
+                *PS* you do not have to create multiple of these, they should all look the same -->
+            <div class="modal-content-container">
+              <div>
+                <img
+                  src="./images/pngegg-girl.png"
+                  alt="sneaker"
+                  class="modal-content"
+                />
+                <div class="modal-imgs">
+                  <img src="./images/pngegg-6.png" alt="" />
+                  <img src="./images/pngegg4.png" alt="" />
+                  <img src="./images/pngegg-7.png" alt="" />
+                </div>
+              </div>
+              <div class="all-text-container">
+                <div class="modal-info">
+                  <h1 class="modal-heading">Article PZ-1000-23</h1>
+                  <h2 class="modal-subtitle">Nike Jordan Air 1</h2>
+                  <p>
+                    Lorem ipsum is simply dummy text of the printing and
+                    typesetting. Lorem Ipsum has been the industry’s standard
+                    dummy.
+                  </p>
+                </div>
+                <div class="size-selector">
+                  <div class="size-selector-text">Size:</div>
+                  <div class="size-numbers">
+                    <span class="size-number">38</span>
+                    <span class="size-number">39</span>
+                    <span class="size-number">40</span>
+                    <span class="size-number">41</span>
+                    <span class="size-number">42</span>
+                    <span class="size-number">43</span>
+                    <span class="size-number">44</span>
+                    <span class="size-number">45</span>
+                  </div>
+                </div>
+                <div class="selectors">
+                  <div class="quantity-title">Qty:</div>
+                  <div class="quantity">
+                    <span class="minus">-</span>
+                    <input type="number" placeholder="1" />
+                  </div>
+                  <span class="plus">+</span>
+                  <div class="color-title">Color:</div>
+                  <div class="colors">
+                    <span class="color1"></span>
+                    <span class="color2"></span>
+                    <span class="color3"></span>
+                  </div>
+                </div>
+                <div class="price">$200</div>
+                <div class="buy-button">
+                  <a href="https://www.amazon.com" target="blank">Buy Now</a>
+                </div>
+              </div>
+
+              <!-- Button to close modal. Please style appropriately -->
+              <button class="modal-button" onclick="openModal()">
+                <i class="far fa-times-circle"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- Testimonial Page -->
+      <div class="section">
+        <div id="testimonialPage" class="content">
+          <!-- Page header -->
+          <header class="page-header-container">
+            <h2 class="page-heading">Best In Business</h2>
+            <h3 class="page-subtitle">Happy Customers</h3>
+          </header>
+          <div id="testimonial-slider" class="owl-carousel">
+            <!-- The content for the testimonials has been created using JavaScript. 
+                Please go to the inspect tool to see which classes were used to build the slider, 
+                and use the classnames given to style them in your CSS sheet -->
+            <!-- ----------------------------------
+                <div class="testimonial">
+                  <i class="fas fa-quote-left"></i>
+                  <q class="testimonial-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</q>
+                  <img class="testimonial-img" src="https://randomuser.me/api/portraits/men/64.jpg" alt="Samuel Serrano">
+                  <h4 class="testimonial-name">Samuel Serrano</h4>
+              </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div id="contactPage" class="content">
+          <!-- Page header -->
+          <header class="page-header-container">
+            <h2 class="page-heading">Questions?</h2>
+            <h3 class="page-subtitle">Let's get in touch</h3>
+          </header>
+          <!-- Contact Details -->
+          <div class="contact-info-and-form">
+            <div class="contact-details-container">
+              <h4 class="contact-details-heading">Warehouse Location</h4>
+              <p class="contact-details-description">
+                There are many variations of passages of Lorem Ipsum
+                <span>available but the majority have suffered .</span>
+              </p>
+              <!-- Please insert location, contact numbers and email elements here -->
+              <div class="contact-icons">
+                <i class="fas fa-map-marker-alt"></i>
+                <p class="text">123 Park Avenue, New York, United States</p>
+                <i class="fas fa-phone-volume"></i>
+                <p class="text phone">
+                  +1 631 1234 5678<span>+1 631 1234 5678</span>
+                </p>
+                <i class="fas fa-paper-plane"></i>
+                <p class="text">email@website.com</p>
+              </div>
+              <div class="icon-group">
+                <a href="#fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#ig"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <!-- Create new form on FORMSPREE and insert ULR in the ACTION ATTRIBUTE -->
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/xrgrerzd"
+              method="POST"
+            >
+              <input
+                class="contact-input"
+                type="text"
+                name="full_name"
+                id="full_name"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="contact-input"
+                type="tel"
+                name="contact_no"
+                id="contact_no"
+                placeholder="Contact No"
+                required
+              />
+              <input
+                class="contact-input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="contact-input"
+                name="message"
+                id="message"
+                placeholder="Type your message here"
+              ></textarea>
+              <button class="button" type="submit">Submit Information</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/76a522a414.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js"
+      integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js"
+      integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- My Javascript File -->
+    <script src="./scripts.js"></script>
+  </body>
+</html>
